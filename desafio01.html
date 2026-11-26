@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<!-- Declara que o documento utiliza HTML5 -->
+
+<html lang="pt-br">
+<!-- Define o idioma da página como português brasileiro -->
+
+<head>
+  <!-- Cabeçalho do documento: configurações da página -->
+
+  <meta charset="UTF-8">
+  <!-- Permite exibir caracteres como á, é, ç e outros -->
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- Faz a página se adaptar ao tamanho da tela do celular ou computador -->
+
+  <title>Cartão de Visitas Digital</title>
+  <!-- Define o título que aparece na aba do navegador -->
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Importa o Bootstrap 5.3.3, que fornece classes para layout, cores, espaçamentos e componentes -->
+
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+  <!-- Importa a biblioteca Bootstrap Icons, que permite usar ícones -->
+</head>
+
+<!--
+  bg-light: coloca o fundo da página em uma cor clara
+  d-flex: transforma o body em um contêiner Flexbox
+  flex-column: organiza os elementos em coluna
+  min-vh-100: faz o body ter no mínimo 100% da altura da tela
+  justify-content-center: centraliza o conteúdo verticalmente
+  align-items-center: centraliza o conteúdo horizontalmente
+-->
+<body class="bg-light d-flex flex-column min-vh-100 justify-content-center align-items-center">
+
+  <!-- CONTEÚDO PRINCIPAL: CARTÃO DE VISITAS DIGITAL -->
+
+  <!--
+    main: representa o conteúdo principal da página
+    container: cria um contêiner responsivo com margens laterais
+    my-4: adiciona espaçamento na parte superior e inferior
+  -->
+  <main class="container my-4">
+
+    <!--
+      row: cria uma linha para organizar as colunas
+      justify-content-center: centraliza as colunas horizontalmente
+    -->
+    <div class="row justify-content-center">
+
+      <!--
+        col-12: ocupa 12 colunas (largura total) em telas pequenas
+        col-sm-10: ocupa 10 colunas a partir de telas pequenas
+        col-md-7: ocupa 7 colunas a partir de telas médias
+        col-lg-5: ocupa 5 colunas em telas grandes
+      -->
+      <div class="col-12 col-sm-10 col-md-7 col-lg-5">
+
+        <!--
+          card: cria um componente de cartão
+          border-dark-subtle: borda escura suave
+          shadow-lg: adiciona uma sombra grande
+          rounded-4: deixa os cantos bastante arredondados
+          overflow-hidden: impede que conteúdo ultrapasse as bordas
+          text-center: centraliza os textos
+        -->
+        <div class="card border-dark-subtle shadow-lg rounded-4 overflow-hidden text-center">
+
+          <!-- CABEÇALHO DO CARTÃO -->
+
+          <!--
+            card-header: define o cabeçalho do cartão
+            bg-dark: coloca o fundo escuro
+            text-white: deixa o texto branco
+            py-4: adiciona espaçamento vertical
+            border-0: remove a borda
+          -->
+          <div class="card-header bg-dark text-white py-4 border-0">
+
+            <!--
+              d-flex: ativa o Flexbox
+              justify-content-end: posiciona o conteúdo no final da linha
+              mb-2: adiciona margem inferior
+            -->
+            <div class="d-flex justify-content-end mb-2">
+
+              <!-- Este espaço está vazio, podendo receber algum elemento futuramente -->
+
+            </div>
+
+            <!-- INICIAIS ESTILIZADAS -->
+
+            <!--
+              mx-auto: adiciona margens automáticas nas laterais
+              bg-white: fundo branco
+              text-dark: texto escuro
+              rounded-circle: transforma o elemento em formato circular
+              d-inline-flex: permite usar Flexbox em um elemento inline
+              align-items-center: centraliza verticalmente
+              justify-content-center: centraliza horizontalmente
+              fw-bold: texto em negrito
+              fs-2: tamanho de fonte grande
+              p-4: adiciona espaçamento interno
+              shadow-sm: adiciona uma sombra pequena
+            -->
+            <div class="mx-auto bg-white text-dark rounded-circle d-inline-flex align-items-center justify-content-center fw-bold fs-2 p-4 shadow-sm">
+
+              <!-- Exibe as iniciais do nome -->
+              LP
+
+            </div>
+          </div>
+
+          <!-- CORPO DO CARTÃO -->
+
+          <!--
+            card-body: área principal do cartão
+            p-4: adiciona espaçamento interno em todos os lados
+          -->
+          <div class="card-body p-4">
+
+            <!-- NOME E ESPECIALIDADE -->
+
+            <!--
+              h1: título principal da página
+              h3: aplica o tamanho visual de um título h3
+              fw-bold: deixa o texto em negrito
+              mb-1: adiciona pequena margem inferior
+              text-dark: deixa o texto escuro
+            -->
+            <h1 class="h3 fw-bold mb-1 text-dark">Leonardo Paizani</h1>
+
+            <!--
+              text-uppercase: transforma o texto em letras maiúsculas visualmente
+              fw-semibold: aplica um negrito intermediário
+              small: deixa o texto menor
+              text-muted: deixa o texto com cor mais apagada
+              mb-3: adiciona margem inferior
+              &amp;: representa o caractere &
+            -->
+            <p class="text-uppercase fw-semibold small text-muted mb-3">
+              Consultor &amp; Arquiteto de Software
+            </p>
+
+            <!-- BADGES DE COMPETÊNCIAS -->
+
+            <!-- mb-3: adiciona margem inferior -->
+            <div class="mb-3">
+
+              <!--
+                badge: cria um selo ou etiqueta
+                bg-dark-subtle: fundo escuro suave
+                text-dark: texto escuro
+                border: adiciona borda
+                border-dark-subtle: borda escura suave
+              -->
+              <span class="badge bg-dark-subtle text-dark border border-dark-subtle">Cloud</span>
+
+              <!-- Selo de competência: DevOps -->
+              <span class="badge bg-dark-subtle text-dark border border-dark-subtle">DevOps</span>
+
+              <!-- Selo de competência: Fullstack -->
+              <span class="badge bg-dark-subtle text-dark border border-dark-subtle">Fullstack</span>
+
+            </div>
+
+            <!-- RESUMO PROFISSIONAL -->
+
+            <!--
+              card-text: identifica o texto do cartão
+              text-secondary: aplica uma cor secundária
+              mb-4: adiciona margem inferior
+            -->
+            <p class="card-text text-secondary mb-4">
+              Desenvolvo soluções em nuvem de alta performance e consultoria técnica especializada.
+            </p>
+
+            <!-- CANAIS DE CONTATO DIRETO -->
+
+            <!--
+              d-grid: organiza os links em uma grade vertical
+              gap-2: adiciona espaço entre os links
+            -->
+            <div class="d-grid gap-2">
+
+              <!-- BOTÃO DO WHATSAPP -->
+
+              <!--
+                a: cria um link
+                href: define o endereço para onde o link direciona
+                target="_blank": abre o link em uma nova aba
+                btn: transforma o link em um botão
+                btn-dark: botão com fundo escuro
+                btn-lg: botão grande
+                rounded-pill: deixa o botão arredondado
+                shadow-sm: adiciona uma sombra pequena
+              -->
+              <a href="https://wa.me/5541999999999" target="_blank" class="btn btn-dark btn-lg rounded-pill shadow-sm">
+
+                <!--
+                  bi: identifica a biblioteca de ícones
+                  bi-whatsapp: exibe o ícone do WhatsApp
+                  me-2: adiciona margem à direita do ícone
+                -->
+                <i class="bi bi-whatsapp me-2"></i>Chamar no WhatsApp
+
+              </a>
+
+              <!-- BOTÃO DO GITHUB -->
+
+              <!--
+                btn-outline-dark: botão com borda escura e fundo transparente
+                rounded-pill: deixa o botão arredondado
+              -->
+              <a href="https://github.com" target="_blank" class="btn btn-outline-dark rounded-pill">
+
+                <!-- Exibe o ícone do GitHub -->
+                <i class="bi bi-github me-2"></i>Repositório no GitHub
+
+              </a>
+
+              <!-- BOTÃO DE E-MAIL -->
+
+              <!--
+                mailto: permite abrir o aplicativo de e-mail
+                btn-outline-dark: botão com borda escura
+                rounded-pill: deixa o botão arredondado
+              -->
+           <a href="https://mail.google.com/mail/?view=cm&fs=1&to=contato@lucasklein.dev" target="_blank" class="btn btn-outline-dark rounded-pill">
+    <i class="bi bi-envelope me-2"></i>Enviar E-mail Profissional
+</a>
+
+              <!-- BOTÃO DO LINKEDIN -->
+
+              <!--
+                target="_blank": abre o link em uma nova aba
+                btn-outline-secondary: botão com borda de cor secundária
+                rounded-pill: deixa o botão arredondado
+              -->
+              <a href="https://linkedin.com" target="_blank" class="btn btn-outline-secondary rounded-pill">
+
+                <!-- Exibe o ícone do LinkedIn -->
+                <i class="bi bi-linkedin me-2"></i>Perfil no LinkedIn
+
+              </a>
+
+            </div>
+            <!-- Fecha a área de contatos -->
+
+          </div>
+          <!-- Fecha o corpo do cartão -->
+
+        </div>
+        <!-- Fecha o cartão -->
+
+      </div>
+      <!-- Fecha a coluna -->
+
+    </div>
+    <!-- Fecha a linha -->
+
+  </main>
+  <!-- Fecha o conteúdo principal -->
+
+  <!--
+    Importa o JavaScript do Bootstrap 5.3.3
+    O bundle contém funcionalidades JavaScript do Bootstrap
+    Neste cartão, não é obrigatório para a aparência, pois não há componentes interativos que o utilizem
+  -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+<!-- Fecha o corpo da página -->
+
+</html>
+<!-- Finaliza o documento HTML -->

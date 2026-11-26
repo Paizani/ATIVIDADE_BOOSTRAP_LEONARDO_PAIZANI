@@ -1,0 +1,463 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <!-- Define o padrão HTML5 -->
+  <meta charset="UTF-8">
+
+  <!-- Adapta o site para celulares e computadores -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Título da aba do navegador -->
+  <title>TechStore | Catálogo de Produtos</title>
+
+  <!-- Importa o CSS do Bootstrap 5.3.3 para utilizar classes de layout, cores e componentes -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Importa os ícones oficiais do Bootstrap (Bootstrap Icons) -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
+</head>
+
+<!--
+  bg-light: define o fundo claro da página
+  text-dark: define os textos padrão com cor escura
+-->
+<body class="bg-light text-dark">
+
+  <!-- ==================== CABEÇALHO / NAVBAR ==================== -->
+
+  <!--
+    navbar: cria uma barra de navegação
+    navbar-expand-lg: expande o menu em telas grandes e cria o botão hambúrguer em telas menores
+    navbar-dark: adapta a cor dos textos para fundos escuros
+    bg-dark: define o fundo escuro
+    sticky-top: mantém o menu fixo no topo da tela ao rolar a página
+    shadow-sm: adiciona uma sombra leve abaixo do menu
+    py-3: adiciona espaçamento interno vertical
+  -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top shadow-sm py-3">
+    <!-- container: centraliza o conteúdo e adapta as margens -->
+    <div class="container">
+
+      <!--
+        navbar-brand: identifica a marca/logotipo da loja
+        fw-bold: deixa o texto em negrito
+        fs-4: aumenta o tamanho da fonte
+      -->
+      <a class="navbar-brand fw-bold fs-4" href="#">
+        <!-- bi bi-cpu: ícone de processador | text-info: azul claro | me-1: margem à direita -->
+        <i class="bi bi-cpu text-info me-1"></i><span class="text-info">TECH</span>STORE
+      </a>
+
+      <!--
+        navbar-toggler: botão que aparece em telas pequenas para abrir/fechar o menu
+        data-bs-toggle="collapse": ativa o efeito sanfona do Bootstrap
+        data-bs-target="#navbarNav": aponta para o ID do menu que será aberto
+      -->
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <!--
+        collapse navbar-collapse: área recolhível do menu em dispositivos móveis
+      -->
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <!--
+          navbar-nav: lista de links de navegação
+          me-auto: empurra os próximos elementos (como o botão do carrinho) para a direita
+          mb-2 mb-lg-0: margem inferior apenas em telas pequenas
+        -->
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link active" href="#">Início</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#produtos">Produtos</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#contato">Contato</a>
+          </li>
+        </ul>
+
+        <!--
+          btn btn-outline-info: botão com borda azul clara
+          position-relative: permite posicionar a bolinha vermelha (badge) no canto do botão
+          data-bs-toggle="offcanvas": abre a gaveta lateral (carrinho)
+          data-bs-target="#carrinhoOffcanvas": ID da gaveta lateral
+        -->
+        <button class="btn btn-outline-info position-relative" type="button" data-bs-toggle="offcanvas" data-bs-target="#carrinhoOffcanvas">
+          <i class="bi bi-cart3 me-1"></i> Carrinho
+          <!--
+            position-absolute top-0 start-100 translate-middle: posiciona no canto superior direito do botão
+            badge rounded-pill bg-danger: etiqueta arredondada vermelha para o contador
+          -->
+          <span id="contador-carrinho" class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
+            0
+          </span>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ==================== BANNER PRINCIPAL (HERO) ==================== -->
+
+  <!--
+    bg-dark: fundo escuro
+    text-white: texto branco
+    py-5: espaçamento interno vertical grande
+    mb-5: margem inferior grande
+  -->
+  <header class="bg-dark text-white py-5 mb-5">
+    <!-- container: centraliza | py-4: espaçamento vertical | text-center: centraliza os textos -->
+    <div class="container py-4 text-center">
+
+      <!--
+        badge: etiqueta de destaque
+        bg-info text-dark: fundo azul claro com texto escuro
+        text-uppercase fw-bold: letras maiúsculas em negrito
+        mb-2 px-3 py-2 rounded-pill: margens, preenchimento e bordas totalmente arredondadas
+      -->
+      <span class="badge bg-info text-dark text-uppercase fw-bold mb-2 px-3 py-2 rounded-pill">
+        Novidades 2026
+      </span>
+
+      <!-- display-4: título gigante de destaque | fw-bold: negrito | mb-3: margem inferior -->
+      <h1 class="display-4 fw-bold mb-3">
+        Tecnologia que impulsiona seu setup
+      </h1>
+
+      <!--
+        lead: destaca o parágrafo
+        text-secondary: cor cinza claro
+        col-lg-8 mx-auto: limita a largura a 8 colunas em telas grandes e centraliza
+        mb-4: margem inferior
+      -->
+      <p class="lead text-secondary col-lg-8 mx-auto mb-4">
+        Confira nossa seleção de notebooks, periféricos e acessórios com alto desempenho para estudo, trabalho e games.
+      </p>
+
+      <!--
+        btn btn-info btn-lg: botão grande azul claro
+        fw-bold px-4 rounded-pill: texto em negrito, espaçamento lateral e bordas arredondadas
+      -->
+      <a href="#produtos" class="btn btn-info btn-lg fw-bold px-4 rounded-pill">
+        Explorar Catálogo <i class="bi bi-arrow-down-short"></i>
+      </a>
+    </div>
+  </header>
+
+  <!-- ==================== SEÇÃO DE PRODUTOS ==================== -->
+
+  <!-- container: organiza e centraliza o conteúdo | pb-5: espaçamento inferior -->
+  <main id="produtos" class="container pb-5">
+
+    <!--
+      d-flex: ativa o Flexbox
+      flex-column flex-md-row: empilha no celular e coloca lado a lado a partir de telas médias
+      justify-content-between: joga o título para a esquerda e a barra de busca para a direita
+      align-items-md-center: alinha verticalmente ao centro
+      mb-4 gap-3: margem inferior e espaçamento entre os itens
+    -->
+    <div class="d-flex flex-column flex-md-row justify-content-between align-items-md-center mb-4 gap-3">
+      <div>
+        <h2 class="fw-bold mb-0">Produtos em destaque</h2>
+        <p class="text-secondary mb-0">Equipamentos selecionados com garantia e envio rápido.</p>
+      </div>
+
+      <!-- input-group: agrupa o ícone de lupa com o campo de texto -->
+      <div class="input-group" style="max-width: 300px;">
+        <span class="input-group-text bg-white"><i class="bi bi-search"></i></span>
+        <!-- form-control: estiliza o campo de input no padrão Bootstrap -->
+        <input type="text" id="campo-busca" class="form-control" placeholder="Buscar produto...">
+      </div>
+    </div>
+
+    <!--
+      row: cria a linha do sistema de grid
+      g-4: adiciona espaçamento (gutter) entre as colunas e linhas
+    -->
+    <div class="row g-4" id="lista-produtos">
+
+      <!-- ==================== PRODUTO 1: NOTEBOOK ==================== -->
+
+      <!--
+        col-12: 1 card por linha no celular
+        col-md-6: 2 cards por linha em tablets
+        col-lg-4: 3 cards por linha em computadores
+      -->
+      <div class="col-12 col-md-6 col-lg-4 item-produto">
+
+        <!--
+          card: cria o cartão do produto
+          h-100: garante que todos os cards da linha tenham a mesma altura
+          shadow-sm: sombra suave
+          border-0: remove a borda padrão
+          overflow-hidden: evita que a imagem vaze para fora dos cantos arredondados
+        -->
+        <div class="card h-100 shadow-sm border-0 overflow-hidden">
+
+          <!-- position-relative: permite colocar a etiqueta "Mais Vendido" por cima da imagem -->
+          <div class="position-relative">
+            <!-- badge bg-success position-absolute top-0 end-0 m-3: etiqueta verde no canto superior direito -->
+            <span class="badge bg-success position-absolute top-0 end-0 m-3">Mais Vendido</span>
+
+            <!--
+              card-img-top: ajusta a imagem ao topo do card
+              object-fit-cover: corta a imagem proporcionalmente sem distorcer (com altura fixa de 220px)
+            -->
+            <img
+              src="https://images.unsplash.com/photo-1496181133206-80ce9b88a853?auto=format&fit=crop&w=800&q=80"
+              class="card-img-top object-fit-cover"
+              style="height: 220px;"
+              alt="Notebook">
+          </div>
+
+          <!--
+            card-body: área interna de conteúdo
+            p-4: espaçamento interno
+            d-flex flex-column: transforma o corpo em coluna flexível para alinhar os botões no final
+          -->
+          <div class="card-body p-4 d-flex flex-column">
+
+            <!-- Linha superior com categoria e nota de avaliação -->
+            <div class="d-flex justify-content-between align-items-center mb-2">
+              <!-- badge bg-primary-subtle text-primary: etiqueta azul bem claro com texto azul -->
+              <span class="badge bg-primary-subtle text-primary">Informática</span>
+              <!-- text-warning: cor amarela para a estrela -->
+              <small class="text-warning">
+                <i class="bi bi-star-fill"></i> 4.9
+              </small>
+            </div>
+
+            <!-- h5: tamanho visual de h5 mantendo a semântica de h3 | card-title fw-bold: título em negrito -->
+            <h3 class="h5 card-title fw-bold">Notebook Pro Dev</h3>
+
+            <!-- card-text text-secondary small: descrição cinza e menor -->
+            <p class="card-text text-secondary small">
+              Ideal para estudos, trabalho, programação e produtividade intensa.
+            </p>
+
+            <!--
+              mt-auto: margem superior automática (empurra preço e botões sempre para o rodapé do card)
+              pt-3: espaçamento superior
+            -->
+            <div class="mt-auto pt-3">
+              <!-- text-decoration-line-through: risca o preço antigo -->
+              <p class="text-secondary text-decoration-line-through small mb-0">R$ 3.899,90</p>
+              <!-- fs-4 fw-bold text-primary: preço atual grande, em negrito e azul -->
+              <p class="fs-4 fw-bold text-primary mb-3">R$ 3.499,90</p>
+
+              <!-- d-grid gap-2: empilha os dois botões ocupando 100% da largura com espaço entre eles -->
+              <div class="d-grid gap-2">
+                <button class="btn btn-primary" onclick="adicionarAoCarrinho('Notebook Pro Dev', 3499.90)">
+                  <i class="bi bi-cart-plus me-1"></i> Adicionar ao carrinho
+                </button>
+                <!-- btn-outline-secondary btn-sm: botão secundário menor que abre o Modal de detalhes -->
+                <button class="btn btn-outline-secondary btn-sm" data-bs-toggle="modal" data-bs-target="#modalDetalhes"
+                  onclick="verDetalhes('Notebook Pro Dev', 'Processador de última geração, 16GB RAM, SSD NVMe 512GB e tela Full HD antirreflexo.', 'R$ 3.499,90')">
+                  Ver especificações
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ==================== PRODUTO 2: HEADSET ==================== -->
+
+      <!-- col-12, col-md-6 e col-lg-4: sistema responsivo de colunas -->
+      <div class="col-12 col-md-6 col-lg-4 item-produto">
+        <div class="card h-100 shadow-sm border-0 overflow-hidden">
+
+          <div class="position-relative">
+            <!-- badge bg-danger: etiqueta vermelha de desconto -->
+            <span class="badge bg-danger position-absolute top-0 end-0 m-3">-15% OFF</span>
+            <img
+              src="https://images.unsplash.com/photo-1599669454699-248893623440?auto=format&fit=crop&w=800&q=80"
+              class="card-img-top object-fit-cover"
+              style="height: 220px;"
+              alt="Headset">
+          </div>
+
+          <div class="card-body p-4 d-flex flex-column">
+            <div class="d-flex justify-content-between align-items-center mb-2">
+              <span class="badge bg-info-subtle text-info-emphasis">Acessórios</span>
+              <small class="text-warning">
+                <i class="bi bi-star-fill"></i> 4.8
+              </small>
+            </div>
+
+            <h3 class="h5 card-title fw-bold">Headset Gamer 7.1</h3>
+            <p class="card-text text-secondary small">
+              Áudio imersivo e espuma com memória para longas sessões de jogos e chamadas.
+            </p>
+
+            <!-- mt-auto: alinha o bloco de preço e botões na base do card -->
+            <div class="mt-auto pt-3">
+              <p class="text-secondary text-decoration-line-through small mb-0">R$ 349,90</p>
+              <p class="fs-4 fw-bold text-primary mb-3">R$ 299,90</p>
+
+              <div class="d-grid gap-2">
+                <button class="btn btn-primary" onclick="adicionarAoCarrinho('Headset Gamer 7.1', 299.90)">
+                  <i class="bi bi-cart-plus me-1"></i> Adicionar ao carrinho
+                </button>
+                <button class="btn btn-outline-secondary btn-sm" data-bs-toggle="modal" data-bs-target="#modalDetalhes"
+                  onclick="verDetalhes('Headset Gamer 7.1', 'Som surround virtual 7.1, microfone com cancelamento de ruído e conexão USB/P3.', 'R$ 299,90')">
+                  Ver especificações
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ==================== PRODUTO 3: TECLADO ==================== -->
+
+      <!-- col-12, col-md-6 e col-lg-4: sistema responsivo de colunas -->
+      <div class="col-12 col-md-6 col-lg-4 item-produto">
+        <div class="card h-100 shadow-sm border-0 overflow-hidden">
+
+          <div class="position-relative">
+            <img
+              src="https://images.unsplash.com/photo-1587829741301-dc798b83add3?auto=format&fit=crop&w=800&q=80"
+              class="card-img-top object-fit-cover"
+              style="height: 220px;"
+              alt="Teclado">
+          </div>
+
+          <div class="card-body p-4 d-flex flex-column">
+            <div class="d-flex justify-content-between align-items-center mb-2">
+              <span class="badge bg-secondary-subtle text-secondary-emphasis">Periféricos</span>
+              <small class="text-warning">
+                <i class="bi bi-star-fill"></i> 4.7
+              </small>
+            </div>
+
+            <h3 class="h5 card-title fw-bold">Teclado Mecânico RGB</h3>
+            <p class="card-text text-secondary small">
+              Precisão, switches táteis de alta durabilidade e iluminação personalizável.
+            </p>
+
+            <!-- mt-auto: alinha o bloco de preço e botões na base do card -->
+            <div class="mt-auto pt-3">
+              <p class="text-secondary small mb-0">À vista no PIX</p>
+              <p class="fs-4 fw-bold text-primary mb-3">R$ 249,90</p>
+
+              <div class="d-grid gap-2">
+                <button class="btn btn-primary" onclick="adicionarAoCarrinho('Teclado Mecânico RGB', 249.90)">
+                  <i class="bi bi-cart-plus me-1"></i> Adicionar ao carrinho
+                </button>
+                <button class="btn btn-outline-secondary btn-sm" data-bs-toggle="modal" data-bs-target="#modalDetalhes"
+                  onclick="verDetalhes('Teclado Mecânico RGB', 'Layout ABNT2, switches mecânicos Brown, anti-ghosting 100% e cabo trançado removível.', 'R$ 249,90')">
+                  Ver especificações
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </main>
+
+  <!-- ==================== SEÇÃO DE CONTATO ==================== -->
+
+  <!-- container: centraliza | mb-5: margem inferior grande -->
+  <section id="contato" class="container mb-5">
+
+    <!--
+      bg-dark text-white: fundo escuro com letras brancas
+      rounded-4: cantos bem arredondados
+      p-4 p-md-5: espaçamento interno responsivo
+      shadow: sombra destacada
+    -->
+    <div class="bg-dark text-white rounded-4 p-4 p-md-5 shadow">
+      <!-- row align-items-center g-4: organiza texto à esquerda e botão à direita -->
+      <div class="row align-items-center g-4">
+        <div class="col-lg-7 text-center text-lg-start">
+          <h2 class="fw-bold mb-2">Ficou com alguma dúvida?</h2>
+          <p class="text-secondary mb-0">
+            Nossa equipe ajuda você a escolher o equipamento ideal para o seu orçamento.
+          </p>
+        </div>
+        <div class="col-lg-5 text-center text-lg-end">
+          <a href="mailto:contato@techstore.com" class="btn btn-info fw-bold rounded-pill px-4 py-2">
+            <i class="bi bi-envelope me-1"></i> Enviar e-mail
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== RODAPÉ ==================== -->
+
+  <!--
+    bg-dark text-white text-center: fundo escuro, texto branco centralizado
+    py-4: espaçamento vertical
+    border-top border-secondary: linha divisória sutil no topo do rodapé
+  -->
+  <footer class="bg-dark text-white text-center py-4 border-top border-secondary">
+    <div class="container">
+      <p class="fw-bold mb-1">
+        <span class="text-info">TECH</span>STORE
+      </p>
+      <p class="text-secondary small mb-0">
+        SESI / SENAI Campo Largo • 2º Ano DS
+      </p>
+    </div>
+  </footer>
+
+  <!-- ==================== COMPONENTES INTERATIVOS (MODAL E OFFCANVAS) ==================== -->
+
+  <!--
+    MODAL: Janela popup que abre ao clicar em "Ver especificações"
+    fade: animação suave de entrada/saída
+  -->
+  <div class="modal fade" id="modalDetalhes" tabindex="-1" aria-hidden="true">
+    <!-- modal-dialog-centered: centraliza a janela verticalmente na tela -->
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title fw-bold" id="modalTitulo">Detalhes do Produto</h5>
+          <!-- btn-close: botão "X" padrão do Bootstrap para fechar -->
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Fechar"></button>
+        </div>
+        <div class="modal-body">
+          <p id="modalDescricao" class="text-secondary"></p>
+          <p class="fs-4 fw-bold text-primary mb-0" id="modalPreco"></p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!--
+    OFFCANVAS: Painel lateral deslizante que funciona como carrinho de compras
+    offcanvas-end: faz o painel deslizar a partir do lado direito da tela
+  -->
+  <div class="offcanvas offcanvas-end" tabindex="-1" id="carrinhoOffcanvas">
+    <div class="offcanvas-header bg-dark text-white">
+      <h5 class="offcanvas-title fw-bold"><i class="bi bi-cart3 me-2"></i>Seu Carrinho</h5>
+      <!-- btn-close-white: deixa o botão "X" branco para aparecer no fundo escuro -->
+      <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas"></button>
+    </div>
+    <div class="offcanvas-body d-flex flex-column">
+      <!-- list-group-flush: lista limpa sem bordas externas para os itens do carrinho -->
+      <ul id="lista-carrinho" class="list-group list-group-flush mb-3">
+        <li class="list-group-item text-secondary text-center py-4">Seu carrinho está vazio.</li>
+      </ul>
+      <!-- mt-auto: fixa o valor total e o botão de finalizar na parte inferior do carrinho -->
+      <div class="mt-auto border-top pt-3">
+        <div class="d-flex justify-content-between fw-bold fs-5 mb-3">
+          <span>Total:</span>
+          <span id="total-carrinho" class="text-primary">R$ 0,00</span>
+        </div>
+        <button class="btn btn-success w-100 fw-bold" onclick="finalizarCompra()">
+          Finalizar Pedido
+        </button>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

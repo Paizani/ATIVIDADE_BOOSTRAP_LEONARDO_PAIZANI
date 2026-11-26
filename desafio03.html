@@ -1,0 +1,439 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <!-- Define o padrão HTML5 -->
+  <meta charset="UTF-8">
+
+  <!-- Adapta o site para celulares e computadores -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Título da aba do navegador -->
+  <title>TechFest 2026 | Tecnologia & Inovação</title>
+
+  <!-- Importa o Bootstrap 5.3.3 para utilizar classes de estilização e layout -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  
+  <!-- Importa os ícones oficiais do Bootstrap (Bootstrap Icons) -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
+
+  <style>
+    /* Efeito de zoom suave nos cards ao passar o mouse */
+    .card-hover {
+      transition: transform 0.3s ease, border-color 0.3s ease;
+    }
+    .card-hover:hover {
+      transform: translateY(-5px);
+      border-color: #0dcaf0 !important;
+    }
+  </style>
+</head>
+
+<!--
+  bg-dark: define o fundo escuro
+  text-white: define os textos como brancos
+-->
+<body class="bg-dark text-white">
+
+  <!-- ==================== NAVBAR RESPONSIVA ==================== -->
+
+  <!--
+    navbar: cria uma barra de navegação
+    navbar-expand-lg: expande o menu em telas grandes e cria o botão hambúrguer em celulares
+    navbar-dark: adapta os elementos para fundos escuros
+    bg-black: define o fundo preto
+    border-bottom border-secondary: adiciona uma borda inferior sutil
+    sticky-top: mantém o menu fixo no topo ao rolar a página
+    py-3: espaçamento vertical interno
+  -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-black border-bottom border-secondary sticky-top py-3">
+    <div class="container">
+
+      <!-- Logotipo da marca -->
+      <a class="navbar-brand fw-bold fs-4 d-flex align-items-center gap-2" href="#">
+        <i class="bi bi-cpu text-info"></i>
+        <span><span class="text-info">TECH</span>FEST 2026</span>
+      </a>
+
+      <!-- Botão menu hambúrguer para dispositivos móveis -->
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <!-- Links de navegação e botão de ação -->
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto mb-2 mb-lg-0 align-items-lg-center gap-lg-3">
+          <li class="nav-item">
+            <a class="nav-link active" href="#">Início</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#sobre">Sobre</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#diferenciais">Diferenciais</a>
+          </li>
+          <li class="nav-item mt-2 mt-lg-0">
+            <!-- Botão que aciona o Modal de inscrição -->
+            <button class="btn btn-outline-info rounded-pill px-4 btn-sm" data-bs-toggle="modal" data-bs-target="#modalInscricao">
+              Garantir Ingresso
+            </button>
+          </li>
+        </ul>
+      </div>
+
+    </div>
+  </nav>
+
+  <!-- ==================== HERO PRINCIPAL ==================== -->
+
+  <!--
+    container: cria um contêiner responsivo
+    py-5: adiciona espaçamento vertical grande
+  -->
+  <section class="container py-5">
+
+    <!--
+      row: cria uma linha para organizar as colunas
+      align-items-center: alinha verticalmente os elementos ao centro
+      g-5: adiciona espaçamento entre as colunas
+    -->
+    <div class="row align-items-center g-5">
+
+      <!-- COLUNA DO TEXTO -->
+
+      <!--
+        col-lg-6: ocupa metade da linha em telas grandes
+        text-center: centraliza o texto
+        text-lg-start: alinha o texto à esquerda em telas grandes
+      -->
+      <div class="col-lg-6 text-center text-lg-start">
+
+        <!-- Etiqueta de destaque com ícone -->
+        <span class="badge rounded-pill bg-info text-dark px-3 py-2 mb-3 fw-bold">
+          <i class="bi bi-stars me-1"></i> O EVENTO DO FUTURO
+        </span>
+
+        <!--
+          display-3: cria um título de destaque grande
+          fw-bold: deixa o título em negrito
+          mb-4: adiciona margem inferior
+        -->
+        <h1 class="display-3 fw-bold mb-4">
+          A tecnologia não espera.
+          <span class="text-info">Você também não.</span>
+        </h1>
+
+        <!--
+          lead: destaca o parágrafo com tamanho maior
+          text-secondary: aplica uma cor secundária
+        -->
+        <p class="lead text-secondary">
+          Uma experiência imersiva de tecnologia, inovação, programação
+          e games. Descubra novas ideias, explore tendências e conecte-se
+          com o universo digital.
+        </p>
+
+        <!-- Botões de Ação -->
+        <div class="d-flex flex-wrap justify-content-center justify-content-lg-start gap-3 mt-4">
+          <button class="btn btn-info btn-lg rounded-pill px-4 fw-bold text-dark" data-bs-toggle="modal" data-bs-target="#modalInscricao">
+            <i class="bi bi-ticket-perforated me-2"></i> Inscrever-se agora
+          </button>
+          <a href="#sobre" class="btn btn-outline-light btn-lg rounded-pill px-4">
+            Saiba mais
+          </a>
+        </div>
+
+        <!-- ESTATÍSTICAS / DESTAQUES -->
+        <div class="row mt-5 pt-3 border-top border-secondary">
+          <div class="col-6">
+            <h3 class="fw-bold text-info h2 mb-1">+50</h3>
+            <p class="text-secondary small mb-0">Horas de conteúdo</p>
+          </div>
+          <div class="col-6">
+            <h3 class="fw-bold text-info h2 mb-1">100%</h3>
+            <p class="text-secondary small mb-0">Imersivo & Gratuito</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- COLUNA DA IMAGEM -->
+
+      <!--
+        col-lg-6: ocupa metade da linha em telas grandes
+        mt-4: adiciona margem superior em telas menores
+        mt-lg-0: remove a margem superior em telas grandes
+      -->
+      <div class="col-lg-6 mt-4 mt-lg-0">
+
+        <!--
+          img-fluid: adapta a imagem ao tamanho do contêiner
+          rounded-4: arredonda os cantos
+          shadow-lg: adiciona uma sombra grande
+          border border-secondary: adiciona uma borda sutil
+          alt: descrição da imagem para acessibilidade
+        -->
+        <img
+          src="https://images.unsplash.com/photo-1540575467063-178a50c2df87?auto=format&fit=crop&w=1200&q=80"
+          class="img-fluid rounded-4 shadow-lg border border-secondary"
+          alt="Estrutura de um grande evento tecnológico">
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ==================== SOBRE O EVENTO ==================== -->
+
+  <!--
+    container: centraliza e organiza o conteúdo
+    py-5: adiciona espaçamento vertical
+  -->
+  <section id="sobre" class="container py-5">
+
+    <!--
+      border-top: adiciona uma borda na parte superior
+      border-secondary: define a cor secundária da borda
+      pt-5: adiciona espaçamento interno superior
+    -->
+    <div class="border-top border-secondary pt-5">
+      <div class="row align-items-center g-5">
+        <div class="col-lg-8">
+          <span class="text-info fw-semibold text-uppercase">
+            <i class="bi bi-info-circle me-1"></i> Sobre a TechFest
+          </span>
+          <h2 class="display-6 fw-bold mt-2">
+            Mais do que um evento.
+            <span class="text-secondary">Uma experiência.</span>
+          </h2>
+          <p class="text-secondary fs-5 mt-3 mb-0">
+            A TechFest reúne tecnologia, criatividade e conhecimento em um
+            ambiente criado para inspirar. Um espaço para conhecer novidades,
+            explorar o universo dos games, descobrir tendências e ampliar
+            horizontes no mundo digital.
+          </p>
+        </div>
+        <div class="col-lg-4 text-center">
+          <div class="p-4 bg-black rounded-4 border border-secondary">
+            <i class="bi bi-calendar-event text-info display-4 mb-2"></i>
+            <h4 class="fw-bold mb-1">24 e 25 de Outubro</h4>
+            <p class="text-secondary small mb-0">Auditório Principal SESI/SENAI</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== DIFERENCIAIS ==================== -->
+
+  <!--
+    container: centraliza o conteúdo
+    py-5: adiciona espaçamento vertical
+  -->
+  <section id="diferenciais" class="container py-5">
+
+    <!-- TÍTULO DOS DIFERENCIAIS -->
+    <div class="mb-5 text-center text-md-start">
+      <span class="text-info fw-semibold text-uppercase">
+        <i class="bi bi-grid-fill me-1"></i> Experiência Completa
+      </span>
+      <h2 class="display-6 fw-bold mt-2">Por que participar?</h2>
+      <p class="text-secondary">Três pilares fundamentais para impulsionar sua jornada no mundo digital.</p>
+    </div>
+
+    <!--
+      row: organiza os cards em uma linha
+      g-4: adiciona espaçamento entre os cards
+    -->
+    <div class="row g-4">
+
+      <!-- CARD 1: TECNOLOGIA -->
+      <div class="col-md-4">
+        <div class="card bg-black text-white border-secondary rounded-4 h-100 card-hover p-2">
+          <div class="card-body p-4">
+            <div class="d-flex justify-content-between align-items-center mb-3">
+              <span class="text-info fs-1 fw-bold">01</span>
+              <div class="bg-info bg-opacity-10 p-3 rounded-circle text-info">
+                <i class="bi bi-cpu fs-4"></i>
+              </div>
+            </div>
+            <h3 class="fw-bold h4 mb-3">Tecnologia</h3>
+            <p class="text-secondary mb-0">
+              Descubra novidades tecnológicas, projetos inovadores
+              e tendências que estão transformando o mundo.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- CARD 2: CONEXÕES -->
+      <div class="col-md-4">
+        <div class="card bg-black text-white border-secondary rounded-4 h-100 card-hover p-2">
+          <div class="card-body p-4">
+            <div class="d-flex justify-content-between align-items-center mb-3">
+              <span class="text-info fs-1 fw-bold">02</span>
+              <div class="bg-info bg-opacity-10 p-3 rounded-circle text-info">
+                <i class="bi bi-people fs-4"></i>
+              </div>
+            </div>
+            <h3 class="fw-bold h4 mb-3">Conexões</h3>
+            <p class="text-secondary mb-0">
+              Conheça pessoas, compartilhe ideias e descubra
+              oportunidades no universo da tecnologia.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- CARD 3: GAMES -->
+      <div class="col-md-4">
+        <div class="card bg-black text-white border-secondary rounded-4 h-100 card-hover p-2">
+          <div class="card-body p-4">
+            <div class="d-flex justify-content-between align-items-center mb-3">
+              <span class="text-info fs-1 fw-bold">03</span>
+              <div class="bg-info bg-opacity-10 p-3 rounded-circle text-info">
+                <i class="bi bi-controller fs-4"></i>
+              </div>
+            </div>
+            <h3 class="fw-bold h4 mb-3">Games</h3>
+            <p class="text-secondary mb-0">
+              Explore o universo gamer, conheça experiências
+              interativas e descubra novas possibilidades.
+            </p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ==================== CHAMADA FINAL ==================== -->
+
+  <!--
+    container: centraliza o conteúdo
+    py-5: espaçamento vertical
+  -->
+  <section class="container py-5">
+
+    <!--
+      bg-info: fundo azul-ciano
+      text-dark: texto escuro
+      rounded-4: cantos arredondados
+      p-4 p-md-5: espaçamento interno
+      text-center: centraliza os textos
+    -->
+    <div class="bg-info text-dark rounded-4 p-4 p-md-5 text-center shadow-lg">
+      <h2 class="fw-bold display-6 mb-3">
+        O futuro está em movimento.
+      </h2>
+      <p class="fs-5 mb-4 col-lg-8 mx-auto">
+        Explore, descubra e faça parte da inovação. Garanta sua vaga gratuita agora mesmo.
+      </p>
+      <button class="btn btn-dark btn-lg rounded-pill px-5 fw-bold" data-bs-toggle="modal" data-bs-target="#modalInscricao">
+        Quero participar da TechFest <i class="bi bi-arrow-right ms-1"></i>
+      </button>
+    </div>
+  </section>
+
+  <!-- ==================== RODAPÉ ==================== -->
+
+  <!--
+    bg-black: fundo preto
+    text-center: centraliza o texto
+    py-4: espaçamento vertical
+    mt-5: margem superior
+    border-top border-secondary: borda superior sutil
+  -->
+  <footer class="bg-black text-center py-4 mt-5 border-top border-secondary">
+    <div class="container">
+      <p class="fw-bold mb-1">
+        TECHFEST 2026
+      </p>
+      <p class="text-secondary small mb-0">
+        SESI / SENAI Campo Largo • 2º Ano DS
+      </p>
+    </div>
+  </footer>
+
+  <!-- ==================== MODAL DE INSCRIÇÃO ==================== -->
+
+  <!-- 
+  modal fade: cria a janela flutuante com animação suave de aparecimento
+  id="modalInscricao": identificador único usado pelo botão para abrir esta janela
+  tabindex="-1": melhora a acessibilidade do teclado
+  aria-hidden="true": oculta temporariamente o modal de leitores de tela quando fechado
+-->
+<div class="modal fade" id="modalInscricao" tabindex="-1" aria-hidden="true">
+  
+  <!-- modal-dialog modal-dialog-centered: centraliza o modal verticalmente na tela -->
+  <div class="modal-dialog modal-dialog-centered">
+    
+    <!-- 
+      modal-content: caixa que engloba todo o conteúdo da janela
+      bg-dark text-white: fundo escuro com texto branco (tema escuro)
+      border-secondary: adiciona uma borda cinza sutil ao redor do modal
+    -->
+    <div class="modal-content bg-dark text-white border-secondary">
+      
+      <!-- Cabeçalho do modal com borda inferior sutil -->
+      <div class="modal-header border-secondary">
+        
+        <!-- Título do modal com ícone em destaque -->
+        <h5 class="modal-title fw-bold">
+          <i class="bi bi-ticket-detailed text-info me-2"></i>Inscrição TechFest 2026
+        </h5>
+        
+        <!-- 
+          btn-close btn-close-white: botão "X" padrão do Bootstrap com cor branca 
+          data-bs-dismiss="modal": atributo do Bootstrap que fecha o modal ao clicar
+        -->
+        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Fechar"></button>
+      </div>
+
+      <!-- Corpo do modal com espaçamento interno (p-4) -->
+      <div class="modal-body p-4">
+        
+        <!-- 
+          form: formulário HTML
+          onsubmit="realizarInscricao(event)": intercepta o envio para rodar a função JavaScript sem recarregar a página
+        -->
+        <form onsubmit="realizarInscricao(event)">
+          
+          <!-- Campo 1: Nome Completo -->
+          <div class="mb-3">
+            <label for="nome" class="form-label text-secondary small">Seu Nome Completo</label>
+            <!-- form-control bg-black text-white: campo de texto estilizado em fundo preto -->
+            <input type="text" class="form-control bg-black text-white border-secondary" id="nome" required placeholder="Ex: Ana Silva">
+          </div>
+
+          <!-- Campo 2: E-mail Institucional -->
+          <div class="mb-3">
+            <label for="email" class="form-label text-secondary small">E-mail institucional</label>
+            <!-- type="email": valida automaticamente se o formato do e-mail é válido -->
+            <input type="email" class="form-control bg-black text-white border-secondary" id="email" required placeholder="seu.email@escola.pr.gov.br">
+          </div>
+
+          <!-- Botão de confirmação que submete o formulário -->
+          <button type="submit" class="btn btn-info w-100 fw-bold py-2 mt-2">
+            Confirmar Inscrição Gratuita
+          </button>
+
+          <!-- Texto descritivo/aviso abaixo do botão -->
+          <p class="text-center text-secondary small mt-3 mb-0">
+            Ao confirmar, você receberá o seu ingresso digital diretamente no e-mail informado.
+          </p>
+
+        </form>
+      </div>
+      
+    </div>
+  </div>
+</div>
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+</body>
+</html>
